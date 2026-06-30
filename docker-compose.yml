@@ -1,0 +1,12 @@
+services:
+  api:
+    build: .
+    ports:
+      - "5000:5000"
+    environment:
+      FLASK_DEBUG: "0"
+    volumes:
+      - tasks_data:/app/instance
+
+volumes:
+  tasks_data:

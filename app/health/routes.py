@@ -1,0 +1,11 @@
+"""Health-check routes."""
+
+from flask import Blueprint, jsonify
+
+health_bp = Blueprint("health", __name__)
+
+
+@health_bp.get("/health")
+def health_check():
+    """Report API availability."""
+    return jsonify({"status": "ok", "service": "flask-tasks-crud-api"})

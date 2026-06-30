@@ -1,0 +1,31 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "API: run development server",
+      "type": "shell",
+      "command": "python run.py",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Database: upgrade",
+      "type": "shell",
+      "command": "flask --app run.py db upgrade",
+      "problemMatcher": []
+    },
+    {
+      "label": "Quality: tests",
+      "type": "shell",
+      "command": "python -m pytest",
+      "group": "test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Quality: lint and format check",
+      "type": "shell",
+      "command": "ruff check . && ruff format --check .",
+      "problemMatcher": []
+    }
+  ]
+}
